@@ -17,11 +17,6 @@ module.exports = {
         gray: "#394150",
         "gray-light": "#4D5562",
       },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
     },
   },
   plugins: [],
