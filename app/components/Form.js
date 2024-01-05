@@ -1,26 +1,26 @@
 export default function Form() {
   return (
-    <form className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div>
-        <label for="name" className="block text-sm text-tan">
+    <form className="shadow-md rounded px-9 pt-6 pb-5 mb-4">
+      <div className="min-w-9">
+        <label for="name" className="block text-xs text-tan py-1">
           Name
         </label>
         <input
           type="text"
           id="name"
-          className="bg-transparent border border-gray-light text-gray text-sm rounded-lg focus:ring-purple-dark focus:border-purple-dark block w-full p-2.5"
+          className="bg-transparent border-2 border-gray-light text-gray text-xs rounded-xl focus:ring-purple-dark focus:border-purple-dark block w-full p-2.5"
           placeholder="enter your name"
           required
         />
       </div>
       <div>
-        <label for="email" className="block text-sm text-tan">
+        <label for="email" className="block text-xs text-tan py-1">
           Email
         </label>
         <input
           type="text"
           id="email"
-          className="bg-transparent border border-gray-light text-gray text-sm rounded-lg focus:ring-purple-dark focus:border-purple-dark block w-full p-2.5"
+          className="bg-transparent border-2 border-gray-light text-gray text-xs rounded-xl focus:ring-purple-dark focus:border-purple-dark block w-full p-2.5"
           placeholder="example@gmail.com"
           required
         />
