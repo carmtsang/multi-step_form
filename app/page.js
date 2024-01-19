@@ -7,16 +7,24 @@ import { CARD_TITLE_BUTTON_STEP } from "./constants";
 
 export default function Home() {
   const [topic, setTopic] = useState("");
-  const [step, setStep] = useState();
+  const [registrationStep, setRegistrationStep] = useState({
+    step: 1,
+    title: "Register",
+    buttonText: "Continue",
+  });
+
+  const allSteps = Object.values(CARD_TITLE_BUTTON_STEP);
+  console.log(allSteps);
 
   return (
     <main className="h-screen flex flex-col items-center justify-center">
       <Card
-        title={"Which topics you are interested in?"}
-        buttonText={"Continue"}
         setTopic={setTopic}
+        registrationStep={registrationStep}
+        setRegistrationStep={setRegistrationStep}
+        allSteps={allSteps}
       />
-      <Steps stepNum={"2"} totalSteps={"3"} />
+      <Steps stepNum={registrationStep.step} totalSteps={allSteps.length} />
     </main>
   );
 }
