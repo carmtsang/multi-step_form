@@ -1,8 +1,7 @@
-import { Indie_Flower } from "next/font/google";
-import Button from "./Button";
 import Form from "./Form";
-import InterestButton from "./InterestButton";
 import Summary from "./Summary";
+import { Button } from "./Button";
+import Interest from "./Interest";
 
 export default function Card({
   registrantInfo,
@@ -42,15 +41,15 @@ export default function Card({
       ) : (
         <></>
       )}
-      {step == 2 ? (
-        <InterestButton
+      {step === 2 ? (
+        <Interest
           handleRegistrantTopics={handleRegistrantTopics}
           selectedTopics={topics}
         />
       ) : (
         <></>
       )}
-      <Summary registrantInfo={registrantInfo} />
+      {step === 3 ? <Summary registrantInfo={registrantInfo} /> : <></>}
       <div className="flex flex-col items-center mt-8 pb-9">
         <Button buttonText={buttonText} />
       </div>

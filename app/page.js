@@ -23,7 +23,7 @@ export default function Home() {
 
   const handleNextStep = () => {};
   return (
-    <main className="h-screen flex flex-col items-center justify-center">
+    <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center">
       <Card
         registrantInfo={registrantInfo}
         setRegistrantInfo={setRegistrantInfo}
