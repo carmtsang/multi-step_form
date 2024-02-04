@@ -1,6 +1,9 @@
-export function Button({ buttonText }) {
+export function Button({ buttonText, onClick }) {
   return (
-    <button className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10">
+    <button
+      onClick={() => onClick()}
+      className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10"
+    >
       {buttonText}
     </button>
   );

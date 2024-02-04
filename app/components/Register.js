@@ -23,7 +23,7 @@ function TextInput({
   );
 }
 
-export default function Form({ registrant, email, handleRegistrantInfo }) {
+export default function Register({ registrant, email, handleRegistrantInfo }) {
   return (
     <form
       autoComplete="off"
