@@ -22,10 +22,10 @@ export default function Card({
     }
   };
 
-  const handleRegistrantInfo = (id, info) => {
+  const handleRegistrantInfo = (name, value) => {
     setRegistrantInfo((prev) => ({
       ...prev,
-      [id]: info,
+      [name]: value,
     }));
   };
 

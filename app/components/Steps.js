@@ -1,6 +1,6 @@
 export default function Steps({ stepNum, totalSteps }) {
   return (
-    <div className="mt-6 flex space-x-8">
+    <div className="mt-6 flex justify-center space-x-8">
       <p className="text-xs text-gray">
         Step {stepNum} of {totalSteps}
       </p>
