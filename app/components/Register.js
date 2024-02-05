@@ -6,7 +6,7 @@ function TextInput({
   handleChange,
 }) {
   return (
-    <div className="mb-6">
+    <div className="mb-5">
       <label for={name} className="block text-xs text-tan py-1 capitalize">
         {name}
       </label>
@@ -28,7 +28,7 @@ export default function Register({ registrant, email, handleRegistrantInfo }) {
     <form
       autoComplete="off"
       onSubmit={(e) => e.preventDefault()}
-      className="shadow-md rounded px-9 pt-6 pb-5 mb-4"
+      className="shadow-md rounded px-9"
     >
       <TextInput
         name="name"
