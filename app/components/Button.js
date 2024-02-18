@@ -1,7 +1,8 @@
-export function Button({ buttonText, onClick }) {
+export function Button({ type, buttonText, onClick }) {
   return (
     <button
       onClick={() => onClick()}
+      type={type}
       className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10"
     >
       {buttonText}

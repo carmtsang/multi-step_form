@@ -43,8 +43,7 @@ export default function Home() {
     const nextStep = registrationStep.step + 1;
     setRegistrationStep(CARD_TITLE_BUTTON_STEP[registrationStep.step + 1]);
   };
-
-  const { step } = registrationStep;
+  const { buttonText, title, step } = registrationStep;
 
   const currentStep = () => {
     if (step === 1) {
@@ -52,7 +51,10 @@ export default function Home() {
         <Register
           handleRegistrantInfo={handleRegistrantInfo}
           registrant={name}
+          buttonText={buttonText}
+          title={title}
           email={email}
+          handleNextStep={handleNextStep}
         />
       );
     }
@@ -61,19 +63,27 @@ export default function Home() {
         <Interest
           handleRegistrantTopics={handleRegistrantTopics}
           selectedTopics={topics}
+          title={title}
+          buttonText={buttonText}
+          handleNextStep={handleNextStep}
         />
       );
     }
     if (step === 3) {
-      return <Summary registrantInfo={registrantInfo} />;
+      return (
+        <Summary
+          registrantInfo={registrantInfo}
+          buttonText={buttonText}
+          title={title}
+          handleNextStep={handleNextStep}
+        />
+      );
     }
   };
 
   return (
     <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center">
-      <Card registrationStep={registrationStep} handleNextStep={handleNextStep}>
-        {currentStep()}
-      </Card>
+      <Card>{currentStep()}</Card>
       <Steps stepNum={registrationStep.step} totalSteps={allSteps.length} />
     </main>
   );
