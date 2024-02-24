@@ -24,7 +24,7 @@ export default function Summary({
         <Button
           type="button"
           buttonText={buttonText}
-          onClick={handleNextStep}
+          handleChange={handleNextStep}
         />
       </div>
     </>

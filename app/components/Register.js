@@ -31,7 +31,7 @@ export default function Register({
       <h1 className="text-lg px-9 py-9">{title}</h1>
       <form
         autoComplete="off"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => handleNextStep(e)}
         className="shadow-md rounded px-9"
       >
         <TextInput
@@ -54,7 +54,7 @@ export default function Register({
           <Button
             type="submit"
             buttonText={buttonText}
-            onClick={handleNextStep}
+            handleChange={() => {}}
           />
         </div>
       </form>

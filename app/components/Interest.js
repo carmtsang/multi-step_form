@@ -26,7 +26,7 @@ export default function Interest({
         <Button
           type="button"
           buttonText={buttonText}
-          onClick={handleNextStep}
+          handleChange={handleNextStep}
         />
       </div>
     </>

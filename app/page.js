@@ -39,9 +39,10 @@ export default function Home() {
     CARD_TITLE_BUTTON_STEP[1]
   );
 
-  const handleNextStep = () => {
+  const handleNextStep = (e) => {
     const nextStep = registrationStep.step + 1;
-    setRegistrationStep(CARD_TITLE_BUTTON_STEP[registrationStep.step + 1]);
+    setRegistrationStep(CARD_TITLE_BUTTON_STEP[nextStep]);
+    if (e) e.preventDefault();
   };
   const { buttonText, title, step } = registrationStep;
 
