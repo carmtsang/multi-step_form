@@ -23,16 +23,14 @@ export default function Register({
   registrant,
   handleRegistrantInfo,
   buttonText,
-  title,
   handleNextStep,
 }) {
   return (
     <>
-      <h1 className="text-lg px-9 py-9">{title}</h1>
       <form
         autoComplete="off"
         onSubmit={(e) => handleNextStep(e)}
-        className="shadow-md rounded px-9"
+        className="shadow-md rounded px-9 pt-1"
       >
         <TextInput
           name="name"
@@ -49,14 +47,7 @@ export default function Register({
           id="email"
           handleChange={handleRegistrantInfo}
         />
-
-        <div className="flex flex-col items-center pt-3 pb-9">
-          <Button
-            type="submit"
-            buttonText={buttonText}
-            handleChange={() => {}}
-          />
-        </div>
+        <Button type="submit" buttonText={buttonText} handleChange={() => {}} />
       </form>
     </>
   );

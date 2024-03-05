@@ -3,7 +3,11 @@
 import { useState } from "react";
 
 import Steps from "./components/Steps";
-import { CARD_TITLE_BUTTON_STEP } from "./constants";
+import {
+  CARD_TITLE_BUTTON_STEP,
+  NOT_SELECTED_INTEREST,
+  SELECTED_INTEREST,
+} from "./constants";
 import Card from "./components/Card";
 import Interest from "./components/Interest";
 import Summary from "./components/Summary";
@@ -15,6 +19,16 @@ export default function Home() {
     email: "",
     topics: [],
   });
+
+  const notSelectedButtonColor = NOT_SELECTED_INTEREST;
+  const selectedColor = SELECTED_INTEREST;
+
+  const [selectedInterestButtonColor, setSelectedInterestButtonColor] =
+    useState(notSelectedButtonColor);
+
+  const clickInterest = (color) => {
+    setSelectedInterestButtonColor(color);
+  };
 
   const { topics, name, email } = registrantInfo;
 
@@ -41,7 +55,7 @@ export default function Home() {
 
   const handleNextStep = (e) => {
     const nextStep = registrationStep.step + 1;
-    setRegistrationStep(CARD_TITLE_BUTTON_STEP[nextStep]);
+    setRegistrationStep((prev) => CARD_TITLE_BUTTON_STEP[nextStep]);
     if (e) e.preventDefault();
   };
   const { buttonText, title, step } = registrationStep;
@@ -53,7 +67,6 @@ export default function Home() {
           handleRegistrantInfo={handleRegistrantInfo}
           registrant={name}
           buttonText={buttonText}
-          title={title}
           email={email}
           handleNextStep={handleNextStep}
         />
@@ -63,8 +76,7 @@ export default function Home() {
       return (
         <Interest
           handleRegistrantTopics={handleRegistrantTopics}
-          selectedTopics={topics}
-          title={title}
+          selectedInterest={selectedInterestButtonColor}
           buttonText={buttonText}
           handleNextStep={handleNextStep}
         />
@@ -75,7 +87,6 @@ export default function Home() {
         <Summary
           registrantInfo={registrantInfo}
           buttonText={buttonText}
-          title={title}
           handleNextStep={handleNextStep}
         />
       );
@@ -83,8 +94,13 @@ export default function Home() {
   };
 
   return (
-    <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center">
-      <Card>{currentStep()}</Card>
+    <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center items-center">
+      <Card>
+        <div class="md:flex">
+          <h1 className="text-xl px-9 pt-10 pb-6">{title}</h1>
+        </div>
+        {currentStep()}
+      </Card>
       <Steps stepNum={registrationStep.step} totalSteps={allSteps.length} />
     </main>
   );

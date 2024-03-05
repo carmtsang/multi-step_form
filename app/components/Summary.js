@@ -2,31 +2,34 @@ import { Button } from "./Button";
 
 export default function Summary({
   registrantInfo,
-  title,
   buttonText,
   handleNextStep,
 }) {
   return (
     <>
-      <h1 className="text-lg px-9 py-9">{title}</h1>
-      <div>
-        <p>Name: {registrantInfo.name}</p>
-        <p>Email: {registrantInfo.email}</p>
-        <p>Topics: </p>
-        <ul>
+      <div className="px-9">
+        <p className="text-base text-tan">
+          Name:
+          <span className="text-white font-medium">{registrantInfo.name}</span>
+        </p>
+        <p className="text-base text-tan">
+          Email:
+          <span className="text-white font-medium">{registrantInfo.email}</span>
+        </p>
+        <p className="text-base text-tan">Topics: </p>
+        <ul className="list-inside list-disc text-white font-medium">
           {registrantInfo.topics.length >= 1 &&
             registrantInfo.topics.map((topic, index) => (
               <li key={index}>{topic}</li>
             ))}
         </ul>
       </div>
-      <div className="flex flex-col items-center pt-3 pb-9">
-        <Button
-          type="button"
-          buttonText={buttonText}
-          handleChange={handleNextStep}
-        />
-      </div>
+
+      <Button
+        type="button"
+        buttonText={buttonText}
+        handleChange={handleNextStep}
+      />
     </>
   );
 }

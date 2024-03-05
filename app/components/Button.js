@@ -1,12 +1,14 @@
 export function Button({ type, buttonText, handleChange }) {
   return (
-    <button
-      onClick={() => handleChange()}
-      type={type}
-      className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10"
-    >
-      {buttonText}
-    </button>
+    <div className="flex flex-col items-center pt-3 pb-9">
+      <button
+        onClick={() => handleChange()}
+        type={type}
+        className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10"
+      >
+        {buttonText}
+      </button>
+    </div>
   );
 }
 
