@@ -4,7 +4,7 @@ export function Button({ type, buttonText, handleChange }) {
       <button
         onClick={() => handleChange()}
         type={type}
-        className="rounded-full bg-purple hover:bg-purple-dark text-white text-xs py-3 px-10"
+        className="rounded-full bg-purple-dark hover:bg-purple-dark text-white text-xs py-3 px-10"
       >
         {buttonText}
       </button>

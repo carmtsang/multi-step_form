@@ -10,7 +10,7 @@ function TextInput({ name, type, value, placeholder, handleChange }) {
         type={type}
         id={name}
         value={value}
-        className="bg-transparent border-2 border-gray-light text-tan text-xs rounded-xl focus:ring-purple-dark focus:border-purple-dark block w-full p-3.5 my-1"
+        className="bg-transparent border-2 border-gray-light text-tan text-xs rounded-xl focus:outline-none focus:ring-purple focus:border-purple block w-full p-3.5 my-1"
         placeholder={placeholder}
         required
         onChange={(e) => handleChange(name, e.target.value)}
