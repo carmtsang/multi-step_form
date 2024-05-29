@@ -38,6 +38,12 @@ export default function Home() {
         ...prev,
         topics: [...topics, topic],
       }));
+    } else {
+      let arrayTopicRemoved = topics.filter((item) => item !== topic);
+      setRegistrantInfo((prev) => ({
+        ...prev,
+        topics: [...arrayTopicRemoved],
+      }));
     }
   };
 
