@@ -5,7 +5,6 @@ export default function Interest({
   handleRegistrantTopics,
   selectedInterest,
   buttonText,
-  title,
   handleNextStep,
 }) {
   const topics = USER_INTERESTED_TOPICS;
@@ -17,7 +16,7 @@ export default function Interest({
           <InterestButton
             key={topic}
             topic={topic}
-            buttonColor={selectedInterest}
+            buttonColor={selectedInterest(topic)}
             handleChange={handleRegistrantTopics}
           />
         ))}

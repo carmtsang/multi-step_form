@@ -5,8 +5,8 @@ import { useState } from "react";
 import Steps from "./components/Steps";
 import {
   CARD_TITLE_BUTTON_STEP,
-  NOT_SELECTED_INTEREST,
-  SELECTED_INTEREST,
+  NOT_SELECTED_BUTTON,
+  SELECTED_BTTON,
 } from "./constants";
 import Card from "./components/Card";
 import Interest from "./components/Interest";
@@ -19,16 +19,6 @@ export default function Home() {
     email: "",
     topics: [],
   });
-
-  const notSelectedButtonColor = NOT_SELECTED_INTEREST;
-  const selectedColor = SELECTED_INTEREST;
-
-  const [selectedInterestButtonColor, setSelectedInterestButtonColor] =
-    useState(notSelectedButtonColor);
-
-  const clickInterest = (color) => {
-    setSelectedInterestButtonColor(color);
-  };
 
   const { topics, name, email } = registrantInfo;
 
@@ -44,6 +34,14 @@ export default function Home() {
         ...prev,
         topics: [...arrayTopicRemoved],
       }));
+    }
+  };
+
+  const buttonColour = (topic) => {
+    if (topics.includes(topic)) {
+      return SELECTED_BTTON;
+    } else {
+      return NOT_SELECTED_BUTTON;
     }
   };
 
@@ -66,6 +64,15 @@ export default function Home() {
   };
   const { buttonText, title, step } = registrationStep;
 
+  const resetSteps = () => {
+    setRegistrantInfo({
+      name: "",
+      email: "",
+      topics: [],
+    });
+    setRegistrationStep(CARD_TITLE_BUTTON_STEP[1]);
+  };
+
   const currentStep = () => {
     if (step === 1) {
       return (
@@ -82,7 +89,7 @@ export default function Home() {
       return (
         <Interest
           handleRegistrantTopics={handleRegistrantTopics}
-          selectedInterest={selectedInterestButtonColor}
+          selectedInterest={buttonColour}
           buttonText={buttonText}
           handleNextStep={handleNextStep}
         />
@@ -93,7 +100,7 @@ export default function Home() {
         <Summary
           registrantInfo={registrantInfo}
           buttonText={buttonText}
-          handleNextStep={handleNextStep}
+          handleNextStep={resetSteps}
         />
       );
     }
