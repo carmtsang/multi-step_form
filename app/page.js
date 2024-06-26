@@ -12,6 +12,7 @@ import Card from "./components/Card";
 import Interest from "./components/Interest";
 import Summary from "./components/Summary";
 import Register from "./components/Register";
+import NodeOverlay from "./components/nodeOverlay";
 
 export default function Home() {
   const [registrantInfo, setRegistrantInfo] = useState({
@@ -108,6 +109,7 @@ export default function Home() {
 
   return (
     <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center items-center">
+      <NodeOverlay />
       <Card>
         <div class="md:flex">
           <h1 className="text-xl px-9 pt-10 pb-6">{title}</h1>
