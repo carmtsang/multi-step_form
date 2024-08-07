@@ -108,7 +108,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container w-1/3 mx-auto h-screen flex flex-col justify-center items-center">
+    <main className="container w-screen mx-auto h-screen flex flex-col justify-center items-center">
       <NodeOverlay />
       <Card>
         <div class="md:flex">
