@@ -8,13 +8,13 @@ export default function NodeOverlay() {
         priority
         src={purpleBlur}
         alt="purple blur"
-        className="absolute z-10 inset-x-3"
+        className="absolute -left-1/4 -top-1/2"
       />
       <Image
         priority
         src={purpleBlur}
         alt="purple blur"
-        className="absolute z-10 end-4"
+        className="absolute -bottom-1/2 -right-1/4"
       />
     </div>
   );

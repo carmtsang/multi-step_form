@@ -12,7 +12,7 @@ import Card from "./components/Card";
 import Interest from "./components/Interest";
 import Summary from "./components/Summary";
 import Register from "./components/Register";
-import NodeOverlay from "./components/nodeOverlay";
+import NodeOverlay from "./components/NodeOverlay";
 
 export default function Home() {
   const [registrantInfo, setRegistrantInfo] = useState({
