@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import Steps from "./components/Steps";
 import {
   CARD_TITLE_BUTTON_STEP,
@@ -66,6 +64,7 @@ export default function Home() {
   const { buttonText, title, step } = registrationStep;
 
   const resetSteps = () => {
+    alert("Form submitted");
     setRegistrantInfo({
       name: "",
       email: "",
