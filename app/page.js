@@ -11,6 +11,7 @@ import Interest from "./components/Interest";
 import Summary from "./components/Summary";
 import Register from "./components/Register";
 import NodeOverlay from "./components/NodeOverlay";
+import { useState } from "react";
 
 export default function Home() {
   const [registrantInfo, setRegistrantInfo] = useState({
